@@ -8,15 +8,11 @@ public class ArrSort {
             }
         }
         return true;
-    }
-    public static void main(String[] args) {
-        int arr[]={1,2,3,45,4,5};
-        boolean ans=isSort(arr);
-        if(ans){
-            System.out.println("Array is sorted");
-        }
-        else{
-            System.out.println("Array is not sorted");
-        }
-    }
+
+}
+public static void main(String[] args) {
+    int arr[]={12,13,14,15,16};
+  boolean ans=  isSort(arr);
+ System.out.println(ans);
+}
 }
