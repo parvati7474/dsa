@@ -1,12 +1,14 @@
 package DSA;
 
 public class Second {
-    static int secSmall(int[] arr){
+    static void findSecond(int[] arr){
         if(arr.length<2){
-            return -1;
+            return;
         }
         int small=Integer.MAX_VALUE;
         int secSmall=Integer.MAX_VALUE;
+        int large = Integer.MIN_VALUE;
+        int seclarge=Integer.MIN_VALUE;
         for(int i=0;i<arr.length;i++){
             if(arr[i]<small){
                 secSmall=small;
@@ -15,35 +17,23 @@ public class Second {
             else if(arr[i]<secSmall && arr[i]!=small){
                 secSmall=arr[i];
             }
-        }
-        return secSmall;
-    }
-    static int secLarge(int[] arr){
-        if(arr.length<2){
-            return -1;
-        }
-        int large=Integer.MIN_VALUE;;
-        int secLarge=Integer.MIN_VALUE;
-        for(int i=0;i<arr.length;i++){
             if(arr[i]>large){
-                secLarge=large;
+                seclarge=large;
                 large=arr[i];
             }
-            else if(arr[i]>secLarge && arr[i]!=large){
-                secLarge=arr[i];
+            else if(arr[i]>seclarge && arr[i]!= large){
+                seclarge=arr[i];
             }
         }
-        return secLarge;
+        System.out.println("Second smallest: " + secSmall);
+        System.out.println("second largest: "+seclarge);
+        
+
     }
     public static void main(String[] args) {
-        int[] arr={1,2,4,7,7,5};
-        int res=secSmall(arr);
-        System.out.println(res);
-        int res1=secLarge(arr);
-        System.out.println(res1);
+        int arr[]={1,2,4,7,7,5};
+       findSecond(arr);
+      
     }
 }
-    
         
-    
-
